@@ -199,20 +199,19 @@ with st.form("receipt_form"):
                     df['Property'] = property
                     df['Payable Party'] = payable_party
                     df.rename(columns={"name": "Item Name", "cost_code": "Cost Code"}, inplace=True)
-                    df['Date Paid'] = None
+            
                     df['Unique ID'] = None
                     df['Worker Name'] = None
                     df['Hours'] = None
                     df['Claim Number'] = None
-                    df['QB Property'] = None
+            
                     df['Invoice Number'] = None
-                    df['Payment Method'] = None
                     df['Project Description'] = df['Item Name']
                     df['Status'] = None
                     df['Form'] = "MATERIALS"
                     df['Drive Link'] = drive_link
 
-                    final_df = df[["Date Paid", "Date Invoiced", "Unique ID", "Claim Number", "Worker Name", "Hours", "Item Name", "Property", "QB Property", "amount", 'Payable Party', 'Project Description', "Invoice Number", "Cost Code", 'Payment Method', "Status", "Form", "Drive Link"]]
+                    final_df = df[["Date Invoiced", "Unique ID", "Claim Number", "Worker Name", "Hours", "Item Name", "Property", "amount", 'Payable Party', 'Project Description', "Cost Code", "Form", "Drive Link"]]
                     final_df.rename(columns={"amount": "Amount"}, inplace=True)
 
 
